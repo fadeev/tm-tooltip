@@ -1,0 +1,4 @@
+{
+  "blockchain": "A blockchain can be described as a distributed digital ledger maintained by a set of validators that remains correct even if some of the validators (less than a third) are malicious.",
+  "consensus-algorithm": "A consensus algorithm is a process in computer science used to achieve agreement on a state value among distributed nodes."
+}

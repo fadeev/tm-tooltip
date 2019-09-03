@@ -1,0 +1,22 @@
+{
+  "name": "tm-tooltip",
+  "version": "0.0.6",
+  "description": "",
+  "main": "src/index.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "scripts": {
+    "build": "vue-cli-service build --target wc --inline-vue --name tm-tooltip src/TmTooltip.vue",
+    "serve": "vue-cli-service serve",
+    "upload": "npm run build && npm version patch && npm publish"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/cli": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "vue": "^2.6.10"
+  }
+}

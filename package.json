@@ -18,5 +18,8 @@
     "@vue/cli": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "vue": "^2.6.10"
+  },
+  "dependencies": {
+    "markdown-it": "^9.1.0"
   }
 }

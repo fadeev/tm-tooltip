@@ -3,13 +3,22 @@
     <button class="term" tabindex="0" @click="select">
       <slot></slot>
     </button>
-    <div class="tooltip" ref="tooltip" tabindex="1">
-      {{ definition }}
-    </div>
+    <div class="tooltip" ref="tooltip" tabindex="1" v-html="definition"></div>
   </div>
 </template>
 
 <style scoped>
+/deep/ h1 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.1 rem;
+}
+
+/deep/ p {
+  line-height: 1.5em;
+  font-size: 0.875rem;
+}
+
 button {
   background: none;
   border: none;
@@ -19,25 +28,24 @@ button {
 }
 
 .term {
-  text-decoration: underline;
   cursor: pointer;
 }
 
 .tooltip {
-  min-width: 250px;
+  min-width: 300px;
   position: absolute;
   left: 0;
   background: white;
   font-size: 0.75rem;
   line-height: 1.5;
-  padding: 1em;
+  padding: 0.75em 1em;
   box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
   border-radius: 0.5em;
   opacity: 0;
   pointer-events: none;
   outline: none;
   transition: all 0.1s ease-in;
-  transform: translateY(-0.5em);
+  transform: translateY(-1em);
 }
 
 .tooltip:focus {
@@ -49,6 +57,7 @@ button {
 
 <script>
 import dict from "./dict.json";
+import MarkdownIt from "markdown-it";
 
 export default {
   props: {
@@ -58,7 +67,7 @@ export default {
   },
   computed: {
     definition() {
-      return dict[this.value];
+      return new MarkdownIt().render(dict[this.value]);
     }
   },
   methods: {

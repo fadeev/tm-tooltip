@@ -20,6 +20,10 @@ button {
   cursor: pointer;
 }
 
+.term:active {
+  outline: none;
+}
+
 .tooltip {
   min-width: 300px;
   position: absolute;
